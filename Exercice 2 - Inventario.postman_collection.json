@@ -1,0 +1,219 @@
+{
+	"info": {
+		"_postman_id": "e1974724-edd1-4be8-971b-7f4ffcf9b158",
+		"name": "Exercice 2 - Inventario",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "OAuth Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "UkkaPo4BAe",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "uGddKT1eID>0Op:Ff|7&9fVC#)Dr~R",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/oauth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"oauth",
+						"token"
+					]
+				},
+				"description": "Request to get token"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Inventario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "285f15ad715db317773744e2098d40956baf4612",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/inventario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"inventario"
+					]
+				},
+				"description": "Ge all the data from inventario"
+			},
+			"response": []
+		},
+		{
+			"name": "Get item from inventario by ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "286dce8f749cbf64ac5e8628be6b44adb7a8a07c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/inventario/605166b2f018330ca6922a39",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"inventario",
+						"605166b2f018330ca6922a39"
+					]
+				},
+				"description": "Get item from inventario by ID"
+			},
+			"response": []
+		},
+		{
+			"name": "Insert Item Inventario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "af750cd22a5a3522f354a911b68cc2f8ab5a2f22",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"PEPTO-BISMOL CEREZA 236 ML\",\n    \"tipo_medicamento\": \"Estomacal\",\n    \"cantidad\": 5,\n    \"precio\": 127.56,\n    \"ubicacion\": \"EJE CENTRAL LAZARO CARDENAS 13 LOCAL G COL: CENTRO (AREA 2) CIUDAD DE MEXICO, CIUDAD DE MEXICO MX\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/inventario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"inventario"
+					]
+				},
+				"description": "Insert item in inventario table."
+			},
+			"response": []
+		},
+		{
+			"name": "Update Inventario Item by Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2311c0c715fd3bd715a78e51220a9f477e9a604d",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"ENTEROGERMINA PROBIOTICOS 2 BILLONES 20 AMPOLLETAS ORAL 5 ml\",\n    \"tipo_medicamento\": \"Estomacal\",\n    \"cantidad\": 10,\n    \"precio\": 347.55,\n    \"ubicacion\": \"LAS CRUCES 18 COL: CENTRO CIUDAD DE MEXICO, CUAUHTEMOC MX\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/inventario/60518627816e120fd05fc658",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"inventario",
+						"60518627816e120fd05fc658"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete item from inventario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "af750cd22a5a3522f354a911b68cc2f8ab5a2f22",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/inventario/6052be0bc4102e27a9b33dca",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"inventario",
+						"6052be0bc4102e27a9b33dca"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
